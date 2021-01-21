@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function App() {
   
   const [todos, setTodos] = useState([]);
   const [title, setTitle] = useState('');
   
+  useEffect(()=> {
+    document.getElementById('input').focus()
+    document.title = 'Todo List'
+  })
+
   const handleInput = (e) => {
     setTitle(e.target.value)
   }
